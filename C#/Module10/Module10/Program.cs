@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Module10
 {
@@ -10,43 +11,9 @@ namespace Module10
             //ListTestApp();
 
 
-
-
-
-
-
-
             Dictionary<int, string> products = BuildProductDictionary();
 
             DisplayProductDictionary(products);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        private static void DisplayProductDictionary(Dictionary<int, string> products)
-        {
-            
-
-
-
-
-
-
-
 
 
         }
@@ -56,49 +23,82 @@ namespace Module10
 
             Dictionary<int, string> products = new Dictionary<int, string>();
 
-
             while (true)
             {
-
                 Console.Write("Enter product id and name: ");
 
+                Console.ForegroundColor = ConsoleColor.Green;
                 string row = Console.ReadLine();
+                Console.ResetColor();
 
-                if (row == null)
+                if (string.IsNullOrWhiteSpace(row))
                 {
-                    break;
+                    return products;
                 }
 
                 String[] xxx = row.Split(',');
+
+                if (xxx.Length != 2)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Invalid input, gör om gör rätt");
+                    Console.ResetColor();
+                    continue;
+                }
+                if (!Regex.IsMatch(xxx[1], @"^[a-zA-Z]+$"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Invalid input, gör om gör rätt");
+                    Console.ResetColor();
+                    continue;
+                }
+
+                if (!Regex.IsMatch(xxx[0], @"^[0-9]+$"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Invalid input, gör om gör rätt");
+                    Console.ResetColor();
+                    continue;
+                }
 
                 int productid = int.Parse(xxx[0]);
 
                 string name = xxx[1];
 
+
+
+
+
+                if (products.ContainsKey(productid))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"The product list already contains the id {productid}");
+                    Console.ResetColor();
+                    continue;
+                }
+
+                //if (products.ContainsValue(name))
+                //{
+                //    Console.ForegroundColor = ConsoleColor.Red;
+                //    Console.WriteLine($"The product list already contains the id {name}");
+                //    continue;
+                //}
+
                 products.Add(productid, name);
 
 
-                
 
-                return xxx;
 
             }
-
-
-
-
-
-
-
-
         }
-        
 
-
-
-
-
-
+        private static void DisplayProductDictionary(Dictionary<int, string> products)
+        {
+            foreach (var item in products)
+            {
+                Console.WriteLine($"Product id = {item.Key} and name = {item.Value}");
+            }
+        }
 
 
         private static void ListTestApp()
