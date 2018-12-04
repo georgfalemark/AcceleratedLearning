@@ -13,7 +13,6 @@ namespace Module8
 
             //FileException();
 
-
             Run();
 
 
@@ -54,7 +53,8 @@ namespace Module8
         {
             string[] animallist = animalsString.Split(',');
 
-            //IF satser, kommer kopplas tillbaka
+            //IF satser
+            //Kopplas till catch i "Run()" för att visa felmeddelanden
 
             if (string.IsNullOrWhiteSpace(animalsString))
             {
@@ -75,12 +75,17 @@ namespace Module8
                     Console.ForegroundColor = ConsoleColor.Red;
                     throw new ArgumentException($"One of the animals didn't contain any letter");
                 }
+                if (animal == "666")
+                {
+                    Console.Beep();
+                }
                 if (!Regex.IsMatch(animal, @"^[a-zA-ZåäöÅÄÖ]+$"))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     throw new ArgumentException($"Animal: {animal} contains invalid letters");
                 }
-            }     
+            }
+                       
             return animallist;
         }
 
