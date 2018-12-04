@@ -7,9 +7,6 @@ namespace Module9
     {
         static void Main(string[] args)
         {
-
-
-
             var watcher = new FileSystemWatcher();
             watcher.Path = @"C:\TMP";
             watcher.EnableRaisingEvents = true;
@@ -19,6 +16,29 @@ namespace Module9
             watcher.Renamed += FileRename;
 
             Console.ReadKey();
+
+
+
+
+
+            //try
+            //{
+
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
+
+
+
+
+
+
+
+
+
+
 
         }
 
