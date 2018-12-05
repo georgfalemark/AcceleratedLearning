@@ -24,15 +24,14 @@ namespace Module11
             double myLinqAverage = Average_WithLinq(Masterlist);
             //SKRIV UT HÄR
 
+            double myNumbersHigherThanFive = NumbersHigherThanFive(Masterlist);
+            //SKRIV UT HÄR
 
-            
 
-            //Skickar vidare listan output till nya metoder
-            //NumbersHigherThanFive(output);
 
             // StariFyList(output);
 
-        }       
+        }
 
         private static double Sum(List<double> kalle1)
         {
@@ -66,19 +65,21 @@ namespace Module11
             return result;
         }
 
-        private static void NumbersHigherThanFive(List<double> output)
+        private static double NumbersHigherThanFive(List<double> listOfNumbers)
         {
-            Console.Write("Higher than 5 UTAN LINK: ");
-            foreach (var item in output)
-            {
-                if (item > 5)
-                {
-                    Console.Write(item);
-                }
-            }
 
-            Console.WriteLine("Higher than 5 MED LINK: ");
-            ///////////////FIXA DENNA
+            var result = new List<double>();
+
+            foreach (var number in listOfNumbers)
+            {
+                if (number > 5)
+                {
+                    result.Add(number);
+                }
+
+            }        
+            
+            return result;
         }
 
         //private static StariFyList(List<double> output)
