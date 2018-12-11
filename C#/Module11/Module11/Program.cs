@@ -8,8 +8,37 @@ namespace Module11
     {
         static void Main(string[] args)
         {
-            List<double> Masterlist = new List<double> { 33, 54, 15 };
 
+
+
+            Console.Write("Kalkylränta: ");
+            double r = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("År: ");
+            double n = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Grundinvestering: ");
+            double G = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Inbetalningsöverskott: ");
+            double a = Convert.ToInt32(Console.ReadLine());
+
+
+            double r_n = Math.Pow(r, n);      
+            double NPV = -G + a / r_n;
+
+            Console.WriteLine($"NPV: {NPV}");
+
+
+
+
+
+
+
+
+            Console.WriteLine();
+
+            var Masterlist = new List<double> { 33, 54, 15 };
 
             //Här förstår de "Masterlist" eftersom det är inom samma klamrar
             double mySum = Sum(Masterlist);
@@ -24,12 +53,12 @@ namespace Module11
             double myLinqAverage = Average_WithLinq(Masterlist);
             //SKRIV UT HÄR
 
-            double myNumbersHigherThanFive = NumbersHigherThanFive(Masterlist);
-            //SKRIV UT HÄR
+            List <double> myNumbersHigherThanFive = NumbersHigherThanFive(Masterlist);
+            Console.WriteLine($"Nummer högre än {myNumbersHigherThanFive}");
 
 
 
-            // StariFyList(output);
+            // StariFyList(Masterlist);
 
         }
 
@@ -65,10 +94,9 @@ namespace Module11
             return result;
         }
 
-        private static double NumbersHigherThanFive(List<double> listOfNumbers)
+        private static List<double> NumbersHigherThanFive(List<double> listOfNumbers)
         {
-
-            var result = new List<double>();
+            List<double> result = new List<double>();
 
             foreach (var number in listOfNumbers)
             {
@@ -76,9 +104,7 @@ namespace Module11
                 {
                     result.Add(number);
                 }
-
-            }        
-            
+            }
             return result;
         }
 
