@@ -33,15 +33,94 @@ namespace Module11
 
 
 
-            List<Show> allShows = GetShowsFromTextFile();
+            //List<Show> allShows = GetShowsFromTextFile();
+            //DisplayInfoAboutShows(allShows);
 
-            DisplayInfoAboutShows(allShows);
+
+
+            List<Person> personList = CreateListOfCustomers("Personshort.txt");
+            DisplayPersonList(personList);
 
             Console.ReadKey();
-
-
-
         }
+
+        private static List<Person> CreateListOfCustomers(String fileWithPersons)
+        {
+            List<Person> personList = new List<Person>();
+            string[] everyLine = File.ReadAllLines(@"C:\TMP\PersonShort.txt");
+
+            foreach (string item in everyLine)
+            {
+                string[] splitedPersonInfo = item.Split(",");
+
+                var p = new Person();
+
+                int newID = int.Parse(splitedPersonInfo[0]);
+                p.ID = newID;
+                p.FirstName = splitedPersonInfo[1];
+                p.LastName = splitedPersonInfo[2];
+                p.Email = splitedPersonInfo[3];
+                p.Gender = Enum.Parse<Gender>(splitedPersonInfo[4]);
+                int newAge = int.Parse(splitedPersonInfo[5]);
+                p.Age = newAge;
+
+                personList.Add(p);
+            }
+            return personList;
+        }
+
+        private static void DisplayPersonList(List<Person> personList)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Sorted list by age: ");
+            Console.WriteLine();
+
+            personList.Sort((a, b) => a.Age - b.Age);
+            foreach (Person person in personList)
+            {
+                Console.WriteLine($"{person.FirstName}\t\t{person.Age}\t\t{person.Gender}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Sorted list by first name: ");
+            Console.WriteLine();
+
+            personList.Sort((a, b) => string.Compare(a.FirstName, b.FirstName));
+            foreach (Person person in personList)
+            {
+                Console.WriteLine($"{person.FirstName}\t\t{person.Age}\t\t{person.Gender}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Men older than 35: ");
+            Console.WriteLine();
+
+            var menOlderThan35 = personList.Where(x => x.Gender == Gender.Male && x.Age > 35);
+            foreach (Person person in menOlderThan35)
+            {
+                Console.WriteLine($"{person.FirstName}\t\t{person.Age}\t\t{person.Gender}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Manipulated: ");
+            Console.WriteLine();
+
+            var manipulatedList = menOlderThan35.Select(x => new Person
+            {
+                ID = x.ID,
+                Age = x.Age + 1000,
+                FirstName = x.FirstName.ToUpper(),
+                LastName = x.LastName.ToUpper(),
+                Email = x.Email,
+                Gender = x.Gender
+            });
+
+            foreach (Person person in manipulatedList)
+            {
+                Console.WriteLine($"{person.FirstName}\t\t{person.Age}\t\t{person.Gender}");
+            }
+        }
+
 
         private static List<Show> GetShowsFromTextFile()
         {
@@ -62,7 +141,6 @@ namespace Module11
             }
             return Shower;
         }
-
         private static void DisplayInfoAboutShows(List<Show> allShows)
         {
             Console.WriteLine("ALLA TITLAR");
@@ -155,18 +233,6 @@ namespace Module11
                 i++;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         private static double Sum(List<double> kalle1)
