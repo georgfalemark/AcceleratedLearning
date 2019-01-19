@@ -14,13 +14,12 @@ namespace CheckPoint06
             AddSpaceship("Cylon Raider");
 
             AddRavioliForSpaceship("Cylon Raider", 1, "2018-04-19");
-            AddRavioliForSpaceship("Millennium Falcon", 1, "2017-01-01");
-            AddRavioliForSpaceship("Millennium Falcon", 2, "2018-01-01");
+            AddRavioliForSpaceship("Millenium Falcon", 1, "2017-01-01");
+            AddRavioliForSpaceship("Millenium Falcon", 2, "2018-01-01");
             AddRavioliForSpaceship("Nalle Puh", 99, "1950-01-01");
 
             List<SpaceShip> list = GetAllSpaceships();
             DisplaySpaceships(list);
-
         }
 
         private static void RecreateDatabase()
@@ -32,16 +31,16 @@ namespace CheckPoint06
             }
         }
 
-        private static void AddRavioliForSpaceship(string v1, int v2, string v3)
-        {
-            var dataAccess = new DataAccess();
-            dataAccess.AddRavioliForSpaceships(v1, v2, v3);
-        }
-
         private static void AddSpaceship(string v)
         {
             var dataAccess = new DataAccess();
             dataAccess.AddSpaceships(v);
+        }
+
+        private static void AddRavioliForSpaceship(string v1, int v2, string v3)
+        {
+            var dataAccess = new DataAccess();
+            dataAccess.AddRavioliForSpaceships(v1, v2, v3);
         }
 
         private static List<SpaceShip> GetAllSpaceships()
@@ -52,15 +51,28 @@ namespace CheckPoint06
 
         private static void DisplaySpaceships(List<SpaceShip> list)
         {
+            var dataAccess = new DataAccess();
+
             foreach (var spaceship in list)
             {
                 Console.WriteLine(spaceship.Name.PadRight(15));
-                //DateTime packDate = DateTime.Parse(spaceship.PackDate);
-                //Console.WriteLine($"PACKDATUM:      {packDate}");
+                if (spaceship.raviolis.Count == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("Slut på ravioli :( ");
+                    Console.ResetColor();
+                }
 
-                //DateTime bestFore = new DateTime(0000, 6, 15);
-                //DateTime result = new DateTime(packDate.Ticks + bestFore.Ticks);
-                //Console.WriteLine($"BÄSTFÖREDATUM         {result}");
+                foreach (var ravioli in spaceship.raviolis)
+                {
+                    DateTime packingDate = DateTime.Parse(ravioli.PackDate);
+                    DateTime bestFore = packingDate.AddYears(0).AddMonths(6).AddDays(15);
+
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("RAVIOLI".PadRight(15) + "Packdatum: " + ravioli.PackDate.ToString().PadRight(20) + "Bästföre: " + bestFore.ToString().PadRight(20));
+                    Console.ResetColor();
+                }
+                Console.WriteLine();
             }
         }
     }

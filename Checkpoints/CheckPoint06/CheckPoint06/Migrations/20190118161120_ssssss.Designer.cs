@@ -4,14 +4,16 @@ using CheckPoint06;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CheckPoint06.Migrations
 {
     [DbContext(typeof(SpaceShipContext))]
-    partial class SpaceShipContextModelSnapshot : ModelSnapshot
+    [Migration("20190118161120_ssssss")]
+    partial class ssssss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,6 +26,8 @@ namespace CheckPoint06.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("NumberOfCans");
 
                     b.Property<string>("PackDate");
 
@@ -44,11 +48,7 @@ namespace CheckPoint06.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("ravioliId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ravioliId");
 
                     b.ToTable("spaceShips");
                 });
@@ -58,13 +58,6 @@ namespace CheckPoint06.Migrations
                     b.HasOne("CheckPoint06.SpaceShip")
                         .WithMany("raviolis")
                         .HasForeignKey("SpaceShipId");
-                });
-
-            modelBuilder.Entity("CheckPoint06.SpaceShip", b =>
-                {
-                    b.HasOne("CheckPoint06.Ravioli", "ravioli")
-                        .WithMany()
-                        .HasForeignKey("ravioliId");
                 });
 #pragma warning restore 612, 618
         }

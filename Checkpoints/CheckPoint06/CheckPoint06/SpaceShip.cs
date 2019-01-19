@@ -8,7 +8,6 @@ namespace CheckPoint06
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int NumberOfCans { get; set; }
-        public string PackDate { get; set; }
+        public List<Ravioli> raviolis { get; set; }
     }
 }

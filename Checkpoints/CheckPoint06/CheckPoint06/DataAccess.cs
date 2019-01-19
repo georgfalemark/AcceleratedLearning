@@ -1,4 +1,4 @@
-﻿using EntityFramework.Extensions;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,14 +24,24 @@ namespace CheckPoint06
 
         internal void AddRavioliForSpaceships(string v1, int v2, string v3)
         {
-            var ravioli = new Ravioli { NumberOfCans = v2, PackDate = v3 };
-            _context.raviolis.Add(ravioli);
-            _context.SaveChanges();
+            for (int i = 0; i < v2; i++)
+            {
+                using (var _context = new SpaceShipContext())
+                {
+                    var result = _context.spaceShips.SingleOrDefault(s => s.Name == v1);
+                    if (result != null)
+                    {
+                        result.raviolis = new List<Ravioli> { new Ravioli { PackDate = v3 } };
+                        _context.SaveChanges();
+                    }
+                }
+            }
+
         }
 
         internal List<SpaceShip> GetAllSpaceships()
         {
-            return _context.spaceShips.ToList();
+            return _context.spaceShips.Include(s => s.raviolis).ToList();
         }
     }
 }

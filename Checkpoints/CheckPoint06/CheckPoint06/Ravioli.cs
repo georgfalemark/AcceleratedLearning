@@ -4,7 +4,9 @@ using System.Text;
 
 namespace CheckPoint06
 {
-    class Ravioli
+    public class Ravioli
     {
+        public int Id { get; set; }
+        public string PackDate { get; set; }
     }
 }
