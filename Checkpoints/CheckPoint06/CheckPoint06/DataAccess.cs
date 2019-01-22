@@ -22,21 +22,26 @@ namespace CheckPoint06
             _context.SaveChanges();
         }
 
-        internal void AddRavioliForSpaceships(string v1, int v2, string v3)
+        internal void AddRavioliForSpaceships(string spaceshipName, int numberOfCans, string packDate)
         {
-            for (int i = 0; i < v2; i++)
+            var spaceShip = _context.spaceShips.SingleOrDefault(s => s.Name == spaceshipName);
+
+            if (spaceShip == null)
             {
-                using (var _context = new SpaceShipContext())
-                {
-                    var result = _context.spaceShips.SingleOrDefault(s => s.Name == v1);
-                    if (result != null)
-                    {
-                        result.raviolis = new List<Ravioli> { new Ravioli { PackDate = v3 } };
-                        _context.SaveChanges();
-                    }
-                }
+                return;
             }
 
+            List<Ravioli> list = new List<Ravioli>();
+
+            for (int i = 0; i < numberOfCans; i++)
+            {
+                var r1 = new Ravioli { PackDate = packDate };
+                list.Add(r1);
+            }
+
+            spaceShip.raviolis = list;
+
+            _context.SaveChanges();
         }
 
         internal List<SpaceShip> GetAllSpaceships()
