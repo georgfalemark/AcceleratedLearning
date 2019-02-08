@@ -1,0 +1,16 @@
+﻿
+@model Report
+
+<h3>En specifik recension</h3>
+
+
+<ul>
+    <li>Id: @Model.Id </li>
+    <li>Titel: @Model.Title </li>
+    <li>Restaurang: @Model.Restaurant </li>
+    <li>Recension: @Model.Description </li>
+    <li>Rating: @Model.Rating </li>
+</ul>
+
+<a asp-action="ViewAll">Tillbaka</a>
+<a asp-action="Index" asp-controller="Home">Tillbaka till huvudmenyn</a>

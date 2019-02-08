@@ -1,0 +1,25 @@
+﻿
+@model ProductListVM
+
+<h3>Product index</h3>
+
+
+<form asp-action="GetById" method="get">
+    <select name="id" asp-items="Model.AllProducts">
+    </select>
+    <button type="submit">Ok</button>
+</form>
+
+
+<h2>Lägg till produkt!</h2>
+<form asp-action="AddProduct" method="post">
+    <input name="Name" />
+    <input name="Description" />
+
+    @*<label asp-for="Product.Name">Namn</label>
+        <input asp-for="Product.Name" />
+        <label asp-for="Product.Description">Förklaring</label>
+        <input asp-for="Product.Description" />*@
+
+    <button type="submit">OK</button>
+</form>

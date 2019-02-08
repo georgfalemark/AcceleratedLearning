@@ -1,0 +1,5 @@
+﻿1,Fantastiskt hak!,Foodie,Maten var god,3
+2,Vilket hak!,Tahi Samila,Maten var grym,4
+3,Ät här!,Mcdonalds,Maten var sy gytt,5
+4,Gå inte hit,Lugna loppan,Maten var inte god,15
+5,sdad,sdsd,fdsf,2

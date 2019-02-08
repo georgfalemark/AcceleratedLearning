@@ -1,0 +1,16 @@
+﻿
+@model IEnumerable<Report>
+
+<h3>Här kan du se alla recensioner</h3>
+
+<p>Antal recensioner: @Model.Count() </p> 
+
+<ul>
+    @foreach (var x in Model)
+    {
+        <li><a asp-action="GetById" asp-route-id="@x.Id">@x.Title</a></li>
+    }
+</ul>
+
+<a asp-action="Index" asp-controller="Home">Tillbaka</a>
+

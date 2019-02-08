@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+
+
+    <input id="number" />
+    <br />
+    <br />
+    <button onclick="squareroot()">Roten ur</button>
+    <br />
+
+    <div id="result" style="color: green"></div>
+    <div id="error" style="color: red"></div>
+
+    <script>
+
+        let result2 = document.getElementById("result");
+        let error2 = document.getElementById("error");
+
+        async function squareroot() {
+            let number = document.getElementById("number").value;
+            //result.innerHTML = `Du angav ${number}`;
+
+            let response = await fetch(`api/squareroot?number=${number}`);
+
+            if (response.status === 200) {
+                let result = await response.json();
+                result2.innerText = result;
+            }
+            else if (response.status === 400) {
+                let error = await response.text();
+                error2.innerText = error;
+            }
+
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

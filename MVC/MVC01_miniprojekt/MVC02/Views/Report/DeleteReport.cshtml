@@ -1,0 +1,13 @@
+﻿
+@model ReportListVM
+
+<h3>Ta bort recension</h3>
+
+<form asp-action="DeleteById" method="delete">
+    <select name="id" asp-items="Model.AllReports"></select>
+    <button type="submit">OK</button>
+</form>
+
+<a asp-action="Index" asp-controller="Home">Tillbaka</a>
+
+

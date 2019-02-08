@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>Dela på choklad</h1>
+    <br />
+
+    <form method="get" action="/webapi4/chocolate">
+        Hur många delar på kakan? <input name="nrPersons" />
+        <button>OK</button>
+    </form>
+    <br />
+
+    <h1>Hämta ordern</h1>
+    <br />
+
+    <form method="get" action="/webapi4/order">
+        Ange order <input name="orderNr" />
+        <button>OK</button>
+    </form>
+    <br />
+
+    <h1>Slå upp användarnamn</h1>
+    <br />
+
+    <form method="get" action="/webapi4/username">
+        Ange order <input name="username" />
+        <button>OK</button>
+    </form>
+    <br />
+
+    <h1>Lampa</h1>
+
+    <form method="get" action="/webapi4/lamp">
+        <input type="checkbox" name="lampOn" value="true"> Slå på lampisen<br>
+        <button>OK</button>
+    </form>
+    <br />
+
+    <h1>Lampa2</h1>
+
+    <form>
+        <input name="lampOn" value="true" type="checkbox" onclick="lightOn()"> Slå på lampisen<br>
+    </form>
+    <br />
+
+    <img id="lampa"/>
+
+    <script>
+
+        let lampa = document.getElementById("lampa");
+        let count = 0;
+
+        function lightOn() {
+
+            if (count == 0) {
+                lampa.src = "http://www.clker.com/cliparts/O/Y/B/C/t/1/light-bulb-on-md.png";
+            }
+            if (count == 1) {
+                lampa.src = "https://images.homedepot-static.com/productImages/763b0433-97f4-4e21-aa95-64c04282a43b/svn/smart-electric-led-bulbs-826-64_1000.jpg";
+            }
+            count++;
+
+            if (count > 1) {
+                count = 0;
+            }
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

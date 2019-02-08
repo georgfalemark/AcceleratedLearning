@@ -1,0 +1,17 @@
+﻿
+<h3>Här kan du lägga till en recension</h3>
+
+<form asp-action="AddReport" method="post">
+    <label>Titel:</label>
+    <input name="Title" />
+    <label>Restaurang:</label>
+    <input name="Restaurant" />
+    <label>Recension:</label>
+    <input name="Description" />
+    <label>Rating:</label>
+    <input name="Rating" />
+
+    <button type="submit">OK</button>
+</form>
+
+<a asp-action="Index" asp-controller="Home">Tillbaka</a>

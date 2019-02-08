@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <form method="post" action="/webapi6/AddDocument">
+
+        Titel: <br />
+        <input name="Title" />
+        <br />
+
+        Antal sidor: <br />
+        <input name="numberOfPages" type="number" />
+        <br />
+        <input name="hasSummary" value="true" type="checkbox"> Sammanfattning finns<br>
+
+        <br />
+        Publiceras: <br />
+        <input name="publishedFrom" />
+        <br />
+
+        Pris: <br />
+        <input name="price" />
+        <br />
+
+        <br />
+        <select name="type">
+            <option value="pdf">PDF</option>
+            <option value="txt">TXT</option>
+        </select>
+        <br />
+
+        <br />
+        <select name="tagList" size="4" multiple>
+            <option value="Genombrott">Genombrott</option>
+            <option value="Forskning">Forskning</option>
+            <option value="Kultur">Kultur</option>
+        </select>
+        <br />
+
+        <br />
+        <input type="radio" value="1" name="rating">1
+        <input type="radio" value="2" name="rating">2
+        <input type="radio" value="3" name="rating">3
+        <input type="radio" value="4" name="rating">4
+        <input type="radio" value="5" name="rating">5
+        <br />
+
+        <br />
+        <button>OK</button>
+
+    </form>
+
+</body>
+</html>

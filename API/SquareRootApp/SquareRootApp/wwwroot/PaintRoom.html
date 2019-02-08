@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Måla om ditt rum!</title>
+</head>
+<body>
+
+    <h4>Ange färg: </h4>
+    <input id="color" />
+    <br />
+    <h4>Ange storlek på rum (KVM): </h4>
+    <input id="number" />
+    <br />
+    <h4>Ange takhöjd på rum (M): </h4>
+    <input id="height" />
+    <br />
+    <br />
+    <button onclick="PaintRoom()">Få offert!</button>
+    <br />
+    <br />
+
+    <div id="result" style="color: green"></div>
+    <div id="error" style="color: red"></div>
+
+    <script>
+
+        let resultDiv = document.getElementById("result");
+        let errorDiv = document.getElementById("error");
+
+        async function PaintRoom() {
+
+            let number = document.getElementById("number").value;
+            let color = document.getElementById("color").value;
+            let height = document.getElementById("height").value;
+
+            let response = await fetch(`api/PaintRoom?number=${number}&color=${color}&height=${height}`);
+
+            if (response.status === 200) {
+                let result1 = await response.text();
+                resultDiv.innerText = result1;
+            }
+            else if (response.status === 400) {
+                let error1 = await response.text();
+                errorDiv.innerText = error1;
+            }
+            else {
+                let error2 = await response.text();
+                errorDiv.innerText = error2;
+            }
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

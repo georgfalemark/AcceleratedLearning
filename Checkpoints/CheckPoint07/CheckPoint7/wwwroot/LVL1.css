@@ -1,0 +1,9 @@
+﻿body {
+}
+
+img {
+    width: 100px;
+    margin-right: 30px;
+    cursor: pointer;
+    user-select: none;
+}

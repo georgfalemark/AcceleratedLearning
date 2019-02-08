@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Alla produkter</h1>
+
+    Antal produkter: @Model.Count()
+
+    <ul>
+        @foreach (var x in Model)
+        {
+            @*<li><a href="GetById/@x.Id">@x.Name</a></li>*@ //alternativ
+            <li><a asp-action="getbyid" asp-route-id="@x.Id">@x.Name</a></li>
+        }
+    </ul>
+
+
+    <form asp-action="GetById" method="get">
+        <input name="id" />
+        <button type="submit">OK</button>
+    </form>
+
+
+
+
+    <h5><a asp-controller="Home" asp-action="index">Tillbaka</a></h5>
+
+
+</body>
+</html>
