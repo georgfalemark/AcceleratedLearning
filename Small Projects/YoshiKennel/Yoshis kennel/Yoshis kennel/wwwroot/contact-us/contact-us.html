@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>contact-us</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="contact-us.css" rel="stylesheet" />
+
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../main/main.html"><img src="../main/Logga_miniversion.png" width="52" height="50" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="../puppies/puppies.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Valpar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../puppies/puppies.html">Leveransklara valpar</a>
+                        <a class="dropdown-item" href="../puppies/puppies.html">Kommande valpar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../contact-us/contact-us.html">Kontakta oss</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="../litters/litters.html">Kullar</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="../photos/photos.html">Fotoalbum<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="../about-us/about-us.html">Om oss<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="../contact-us/contact-us.html">Kontakta oss<span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col col-2">
+            </div>
+
+            <div class="col col-8">
+
+                <br />
+                <h1 class="text-center">Kontakta oss</h1>
+                <br />
+                <br />
+
+                <form>
+                    <div class="form-group">
+                        <label for="FormControlSelect1">Vad gäller ärendet?</label>
+                        <select class="form-control" id="FormControlSelect1">
+                            <option>Priser</option>
+                            <option>Valpar</option>
+                            <option>Parning</option>
+                            <option>Rasen</option>
+                            <option>Övrigt</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="FormControlTextarea1">Meddelande*</label>
+                        <textarea class="form-control" id="FormControlTextarea1" rows="6"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-6">
+                            <div class="form-group">
+                                <label for="InputPrename">Förnamn*</label>
+                                <input type="text" class="form-control" id="InputPrename" placeholder="Ange förnamn">
+                            </div>
+                        </div>
+
+                        <div class="col col-6">
+                            <div class="form-group">
+                                <label for="InputLastname">Efternamn*</label>
+                                <input type="text" class="form-control" id="InputLastname" placeholder="Ange efternamn">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-6">
+                            <div class="form-group">
+                                <label for="InputTelephoneNumber">Telefonnummer*</label>
+                                <input type="text" class="form-control" id="InputTelephoneNumber" placeholder="Ange telefonnummer">
+                            </div>
+                        </div>
+                        <div class="col col-6">
+                            <div class="form-group">
+                                <label for="InputEmail1">Epost*</label>
+                                <input type="email" class="form-control" id="InputEmail" placeholder="Ange epostadress">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-6">
+                            <div class="row">
+                            </div>
+                        </div>
+                        <div class="col col-6">
+
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="Check1">
+                                <label class="form-check-label" for="exampleCheck1">Skicka kopia till min mail</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" id="submit">Skicka in</button>
+                    </div>
+
+                    <small id="approvesPersonInformation" class="form-text text-muted text-center">Genom att skicka in godkänner du vår <a href="personuppgifter.html">behandling av personuppgifter</a></small>
+                    <br />
+                    <br />
+                </form>
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+                <div id="validationMessage"></div>
+                <div id="validationPrename"></div>
+                <div id="validationLastname"></div>
+                <div id="validationTelephoneNumber"></div>
+                <div id="validationEmail"></div>
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="col col-2">
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <footer class="page-footer font-small teal pt-4">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col col-6">
+
+                    <div class="row">
+                        <div class="col col-6">
+                            <img src="../main/Logga_storversion.png" class="img-fluid" />
+
+                        </div>
+
+                        <div class="col col-6 text-md-left">
+
+
+                            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+
+                            <p>
+                                Östra Hamngatan 16<br />
+                                411 09 Göteborg<br />
+                                yoshikennel@falemark.com<br />
+                                + 46 768 882 934<br />
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+
+                <div class="col col-6 text-md-left">
+
+
+                    <div class="row">
+                        <div class="col col-6">
+
+
+                            <h5 class="text-uppercase font-weight-bold">Andra kennlar</h5>
+
+
+                            <p>
+                                <a class="color1" href="#!">Fralla - hund för alla</a><br />
+                                <a class="color1" href="#!">Bullens Dog</a><br />
+                                <a class="color1" href="#!">Tax(not)free</a><br />
+                                <a class="color1" href="#!">Hundras procent</a><br />
+                            </p>
+
+                        </div>
+
+                        <div class="col col-6">
+
+                            <h5 class="text-uppercase font-weight-bold">För hunden</h5>
+
+                            <p>
+                                <a class="color1" href="http://www.priimahundfoder.se/">Prima</a><br />
+                                <a class="color1" href="https://www.doggy.se/hundfoder/doggy-professional/">Doggy proffessional</a><br />
+                                <a class="color1" href="https://vetzoo.se/hund/">Vetzoo</a><br />
+                                <a class="color1" href="https://www.haromi.se/">Haromi</a><br />
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright text-center py-3">
+            © 2018 Copyright:
+            <a href="../main/main.html"> YoshisKennel.com</a>
+        </div>
+    </footer>
+
+
+
+
+    <script src="contact-us.js"></script>
+
+</body>
+</html>

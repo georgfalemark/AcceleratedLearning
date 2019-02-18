@@ -1,0 +1,33 @@
+﻿Yoshis Kennel
+- Fixa skalet - DONE
+- Färgpalett - DONE
+- Logga - Fråga KG
+
+- Valpar
+- Kullar
+- Fotoalbum
+- Kontakta oss
+- Om oss
+
+-------------------------------------------------
+
+TORSDAG
+
+Olof: Footer (jobbar i litters)
+
+Rebecka: Fotoalbum-sidan
+
+Georg: Kontakta oss
+
+-------------------------------------------------
+
+FREDAG
+
+Lägga till tabell med lite hälsoinfo under kullar (se plymspireas.com) Rebecka
+Lägga till footer i de andra sidorna
+Centrera bilderna i fotoalbumet (Rebecka)
+Lägg till text och typ 1 bild under valpar + om oss
+
+Fixa logga
+Bestämma typsnitt
+Be någon se över hemsidan, om vi ska ändra något tex placering av innehåll, länkar

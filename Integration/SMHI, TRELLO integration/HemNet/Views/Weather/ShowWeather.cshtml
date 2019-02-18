@@ -1,0 +1,11 @@
+﻿@model WeatherVm
+
+<h1>VÄDER</h1>
+
+@foreach (var item in Model.TimeTemps)
+{
+<ul>
+    <li>@item.Time</li>
+    <li>@item.Temp</li>
+</ul>
+}

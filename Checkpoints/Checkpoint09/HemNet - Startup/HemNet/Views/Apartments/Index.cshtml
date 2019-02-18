@@ -1,0 +1,117 @@
+﻿@model IEnumerable<HemNet.Models.Apartment>
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApartmentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+
+
+                @{
+                    int count = (int)ViewData["y"];
+                }
+
+                @{
+                    int[] arr1 = (int[])ViewData["intArr"];
+                }
+
+
+
+
+
+
+                @*<a asp-action="Index" asp-controller="Apartments" asp-route-count="@arr1[count]">Price 1</a>*@
+
+
+
+
+
+                @*@foreach (var count in arr1)
+        {
+            <a asp-action="Index" asp-controller="Apartments" asp-route-count="@count">Price</a>
+        }*@
+
+
+
+                @for (int i = 0; i < arr1.Length; i++)
+                {
+                    if (i == 0)
+                    {
+                        <a asp-action="Index" asp-controller="Apartments" asp-route-count="@arr1[i]">Price UP</a>
+                    }
+                    if (i == 1)
+                    {
+                        <a asp-action="Index" asp-controller="Apartments" asp-route-count="@arr1[i]">Price NER</a>
+                    }
+                    if (i == 2)
+                    {
+                        <a asp-action="Index" asp-controller="Apartments" asp-route-count="@arr1[i]">Price</a>
+                    }
+                }
+
+
+
+
+
+
+
+
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OperatingCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HousingCooperative)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApartmentNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OperatingCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HousingCooperative.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
