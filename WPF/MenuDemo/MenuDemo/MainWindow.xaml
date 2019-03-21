@@ -1,0 +1,45 @@
+﻿<Window x:Class="MenuDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenuDemo"
+        mc:Ignorable="d" FontFamily="Asap"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <!--Kan användas för att få en vanlig meny-->
+        <!--<Menu>
+            
+        </Menu>-->
+        
+        <ListBox>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="File">
+                        <MenuItem Header="New..." />
+                        <MenuItem Header="Open..." />
+                        <Separator />
+                        <MenuItem Header="Add">
+                            <MenuItem Header="New Window" />
+                            <MenuItem Header="New Project" />
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="Save as you go" IsCheckable="True" />
+                    </MenuItem>
+                    <MenuItem Header="Edit">
+                        <MenuItem Header="Cut" />
+                        <MenuItem Header="Copy" />
+                        <MenuItem Header="Paste" />
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <ListBoxItem Content="item 1" />
+            <ListBoxItem Content="item 2" />
+            <ListBoxItem Content="item 3" />
+        </ListBox>
+        
+        <Button Width="50" Height="50" Name="GoToOtherWindow" Content="Click me!" Click="GoToOtherWindow_Click" />
+        
+    </Grid>
+</Window>

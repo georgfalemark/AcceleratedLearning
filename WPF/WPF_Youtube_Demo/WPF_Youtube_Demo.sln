@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Youtube_Demo", "WPF_Youtube_Demo\WPF_Youtube_Demo.csproj", "{3E430747-6A03-4CCC-9618-C8B70BC02C39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E430747-6A03-4CCC-9618-C8B70BC02C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E430747-6A03-4CCC-9618-C8B70BC02C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E430747-6A03-4CCC-9618-C8B70BC02C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E430747-6A03-4CCC-9618-C8B70BC02C39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98B13BA3-4925-4E0A-8069-1C206B3E9476}
+	EndGlobalSection
+EndGlobal

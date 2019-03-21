@@ -1,0 +1,39 @@
+﻿<Window x:Class="TreeView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreeView"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TreeView>
+            <TreeViewItem Header="Animals">
+                <TreeViewItem Header="Mamels">
+                    <TreeViewItem Header="Dogs">
+                        <TreeViewItem Header="Kelb 1" />
+                        <TreeViewItem Header="Kelb 2" />
+                        <TreeViewItem Header="Kelb 3" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="Cats">
+                        <TreeViewItem Header="Kisse1" />
+                        <TreeViewItem Header="Kisse2" />
+                        <TreeViewItem Header="Kisse3" />
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="Marsupials">
+                    <TreeViewItem Header="Kangroo" />
+                    <TreeViewItem Header="Kooala" />
+                </TreeViewItem>
+            </TreeViewItem>
+            
+            
+            <TreeViewItem Header="Other">
+                
+            </TreeViewItem>
+            <TreeViewItem Header="Plants">
+                
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>
