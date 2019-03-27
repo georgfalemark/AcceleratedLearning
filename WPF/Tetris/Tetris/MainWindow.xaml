@@ -53,5 +53,5 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
             </Grid>
-        </DockPanel>
+    </DockPanel>
 </Window>

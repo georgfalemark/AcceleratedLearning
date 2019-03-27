@@ -10,12 +10,23 @@ namespace interfaces
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
+
+
+
+
+
+            List<List<decimal>> multiDimList = new List<List<decimal>> { new List<decimal> { 1, 2, 3 }, new List<decimal> { 4, 5, 6 }, new List<decimal> { 7, 8, 9 } };
+
+            foreach (var list in multiDimList)
+            {
+                Console.WriteLine(list[0]);
+            }
+
+
+
+
             Console.ReadKey();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
         }
     }
 }
