@@ -1,0 +1,52 @@
+﻿@page "/test"
+@inject HttpClient Http
+@using static WebApplication1.SmhiClasses;
+
+
+@if (rootObjects == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>TID</th>
+                <th>TEMPERATUR (C)</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < 24; i++)
+            {
+
+                ParameterSmhi param = rootObjects.timeSeries[i].parameters.Single(x => x.name == "t");
+                float value = param.values[0];
+
+                <tr>
+                    <td>
+                        @now.AddHours(i) 
+                    </td>
+                    <td>
+                        @value
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+}
+
+@functions {
+
+    Rootobject rootObjects;
+    DateTime now = DateTime.Now;
+
+    protected override async Task OnInitAsync()
+    {
+        rootObjects = await Http.GetJsonAsync<Rootobject>("https://opendata-download-metanalys.smhi.se/api/category/mesan1g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json");
+    }
+
+}
+
